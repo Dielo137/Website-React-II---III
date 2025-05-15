@@ -33,5 +33,5 @@ El sitio mantendrá sus 4 secciones principales: **Inicio, Sobre Nosotros, Servi
 
 **Estilo Visual:** Se mantendrá la estética **oscura, post-punk, gótica** del diseño original.
 
-**Autor:** - Estudiante INACAP, Sede Puente Alto.
+**Autor:** Diego Lopez Abarca - Estudiante INACAP, Sede Puente Alto.
 **Repositorio Base del Curso:** [react-30042025](https://github.com/felipe22-profe-inacap/react-30042025.git)
