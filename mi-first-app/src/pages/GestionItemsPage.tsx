@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import FormProfe from '../components/FormProfe'; // Ajusta la ruta si es necesario
 import ListProfe from '../components/ListProfe'; // Ajusta la ruta si es necesario
-// import '../App.css'; // Si este CSS es específico para este CRUD, mantenlo o muévelo.
-                       // Si es global, ya debería estar en index.css o App.tsx (el nuevo)
+
 import Item from '../interfaces/Item'; // Ajusta la ruta si es necesario
 import { Container } from 'react-bootstrap';
 

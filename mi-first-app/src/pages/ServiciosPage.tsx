@@ -1,30 +1,103 @@
-// src/pages/ContactoPage.tsx
+// src/pages/ServiciosPage.tsx
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-// Más adelante aquí importarás y usarás tu componente de formulario de contacto
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+// import { Link } from 'react-router-dom'; // Si los botones "Ver Detalles" llevaran a otra página
 
-const ContactoPage: React.FC = () => {
+const ServiciosPage: React.FC = () => {
+
+  const productos = [
+    {
+      imgSrc: '/img/producto1.png',
+      alt: 'Chaqueta Medianoche',
+      title: 'Chaqueta "Medianoche"',
+      text: 'Cuero sintético vegano, tachuelas y forro interior satinado. Perfecta para noches rebeldes.',
+      price: '$75.990',
+      conditions: 'Stock limitado.',
+    },
+    {
+      imgSrc: '/img/producto2.png',
+      alt: 'Vestido Niebla Eterna',
+      title: 'Vestido "Niebla Eterna"',
+      text: 'Terciopelo negro con detalles de encaje. Elegancia gótica para cualquier ocasión oscura.',
+      price: '$62.500',
+      conditions: 'Limpieza en seco recomendada.',
+    },
+    {
+      imgSrc: '/img/producto3.png',
+      alt: 'Botines Paso Nocturno',
+      title: 'Botines "Paso Nocturno"',
+      text: 'Plataforma robusta, hebillas metálicas y cremallera lateral. Comodidad y actitud.',
+      price: '$89.990',
+      conditions: 'Material sintético.',
+    },
+    {
+      imgSrc: '/img/producto4.png',
+      alt: 'Camiseta Eco Distópico',
+      title: 'Camiseta "Eco Distópico"',
+      text: 'Algodón orgánico con estampado serigrafiado exclusivo. Arte post-punk para llevar.',
+      price: '$28.000',
+      conditions: 'Edición limitada.',
+    },
+    {
+      imgSrc: '/img/producto5.png',
+      alt: 'Falda Asimétrica Lunar',
+      title: 'Falda "Asimétrica Lunar"',
+      text: 'Corte irregular, tela ligera y cómoda con estampado sutil de fases lunares.',
+      price: '$45.500',
+      conditions: 'Tallas XS a XL.',
+    },
+    {
+      imgSrc: '/img/producto6.png',
+      alt: 'Bolso Cripta Urbana',
+      title: 'Bolso "Cripta Urbana"',
+      text: 'Diseño estructurado con compartimentos múltiples y cadena metálica oscura.',
+      price: '$55.900',
+      conditions: 'Cierre magnético.',
+    },
+  ];
+
   return (
-    <Container className="my-5"> {/* my-5 es margen vertical */}
-      <Row className="justify-content-center">
-        <Col md={8} lg={6}> {/* Columna para centrar el contenido */}
-          <h1 className="text-center mb-4">Contacto</h1>
-          <p className="text-center">
-            Aquí irá el formulario de contacto y la información relevante.
-          </p>
-          {/* 
-            Aquí es donde, más adelante, integrarás el componente 
-            del formulario que cumpla con los requisitos de la Evaluación II 
-            (validación de correo, almacenamiento en LocalStorage).
-            
-            Por ejemplo:
-            import ContactForm from '../components/ContactForm'; // Suponiendo que lo creas ahí
-            <ContactForm /> 
-          */}
+    <Container className="my-5"> {/* mt-5 mb-5 se convierte en my-5 */}
+      <Row>
+        <Col xs={12} className="text-center mb-4">
+          <h1 className="display-4">Colecciones Oscuras</h1>
+          <p className="lead">Descubre nuestras piezas seleccionadas.</p>
+          <hr style={{ borderTop: '1px solid #555' }} />
         </Col>
+      </Row>
+
+      <Row>
+        {productos.map((producto, index) => (
+          <Col lg={4} md={6} className="mb-4" key={index}>
+            <Card className="h-100 bg-dark text-white border-secondary">
+              <Card.Img
+                variant="top"
+                src={producto.imgSrc}
+                alt={producto.alt}
+                style={{ height: '300px', objectFit: 'cover' }}
+              />
+              <Card.Body className="d-flex flex-column">
+                <Card.Title>{producto.title}</Card.Title>
+                <Card.Text>{producto.text}</Card.Text>
+                <p className="font-weight-bold">{producto.price}</p>
+                <Card.Text>
+                  <small className="text-muted">Condiciones: {producto.conditions}</small>
+                </Card.Text>
+                {/* Si el botón debe llevar a una página de detalle de producto:
+                <Button as={Link} to={`/producto/${producto.id}`} variant="outline-light" className="mt-auto">
+                  Ver Detalles
+                </Button> 
+                Sino, un botón normal: */}
+                <Button variant="outline-light" className="mt-auto" onClick={() => alert(`Detalles de ${producto.title}`)}>
+                  Ver Detalles
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
 };
 
-export default ContactoPage; // <--- ¡ESTA LÍNEA ES CRUCIAL!
+export default ServiciosPage;

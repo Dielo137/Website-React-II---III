@@ -1,13 +1,13 @@
 // src/pages/HomePage.tsx
 import React from 'react';
 import { Container, Row, Col, Carousel, Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; // Para los botones que navegan a otras páginas
+import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   return (
     <> {/* Fragmento para envolver todo */}
-      {/* === Contenido Principal (anteriormente <main>) === */}
-      <main> {/* Puedes mantener la etiqueta <main> semántica si lo deseas */}
+      {/*  === */}
+      <main> {/*  */}
         {/* Carousel */}
         <Carousel fade className="mb-4">
           <Carousel.Item>
@@ -121,9 +121,8 @@ const HomePage: React.FC = () => {
       </main>
 
       {/* === Footer (anteriormente <footer>) === */}
-      {/* Es mejor tener un componente Footer separado y usarlo en App.tsx, 
-          pero para simplificar esta traducción directa, lo ponemos aquí por ahora.
-          Luego puedes moverlo a src/components/Footer.tsx y usarlo en App.tsx
+      {/* 
+
       */}
       <footer className="py-3"> {/* Las clases bg-dark y text-white vendrán de tu styles.css global */}
         <Container>

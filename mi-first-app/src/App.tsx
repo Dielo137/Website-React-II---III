@@ -7,8 +7,8 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import HomePage from './pages/HomePage';
 import AcercaPage from './pages/AcercaPage';
 import ServiciosPage from './pages/ServiciosPage';
-import ContactoPage from './pages/ContactoPage'; // Esta usará el ContactForm.tsx
-import GestionItemsPage from './pages/GestionItemsPage'; // La página CRUD que creaste
+import ContactoPage from './pages/ContactoPage'; 
+import GestionItemsPage from './pages/GestionItemsPage'; 
 
 
 const App: React.FC = () => {
