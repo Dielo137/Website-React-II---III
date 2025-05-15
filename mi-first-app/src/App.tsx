@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage';
 import AcercaPage from './pages/AcercaPage';
 import ServiciosPage from './pages/ServiciosPage';
 import ContactoPage from './pages/ContactoPage'; 
-import GestionItemsPage from './pages/GestionItemsPage'; 
+
 
 
 const App: React.FC = () => {
@@ -43,7 +43,6 @@ const App: React.FC = () => {
           <Route path="/acerca-de" element={<AcercaPage />} />
           <Route path="/servicios" element={<ServiciosPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
-          <Route path="/gestion-items" element={<GestionItemsPage />} />
         </Routes>
       </Container>
     </Router>
