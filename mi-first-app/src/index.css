@@ -84,22 +84,22 @@ a:hover {
 
 /* --- FORMULARIOS (Input de búsqueda y Contacto) --- */
 .form-control {
-    background-color: #2c2c2c; /* Un gris oscuro */
-    color: #fff;
+    background-color: #ffffff; /* Un gris oscuro */
+    color: #fff; /* ESTA ES LA LÍNEA CLAVE PARA EL TEXTO DEL INPUT */
     border: 1px solid #555;
     transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transición para focus */
 }
 
 .form-control:focus { /* Al hacer clic en el input */
     background-color: #333;
-    color: #fff;
+    color: #fff; /* También asegúrate que aquí el color sea blanco */
     border-color: #bb86fc; /* Resaltar con el color de acento */
     box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.25); /* Sombra sutil de Bootstrap adaptada */
     outline: none; /* Quitar borde feo por defecto */
 }
 
 .form-control::placeholder { /* Color del texto placeholder */
-  color: #888;
+  color: #ffffff; /* Esto controla el color del texto "Tu Nombre", "Tu Email" ANTES de escribir */
 }
 
 /* Botón buscar y enviar (Mejora) */
