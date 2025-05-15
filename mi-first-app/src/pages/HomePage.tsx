@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
                     Descubre lo último que ha llegado a nuestras sombras.
                   </Card.Text>
                   <Button 
-                    as={Link} 
+                    as={Link as any} // <--- CAMBIO AQUÍ
                     to="/servicios" 
                     variant="outline-light" 
                     className="mt-auto"
@@ -80,7 +80,7 @@ const HomePage: React.FC = () => {
                     Piezas atemporales que definen la esencia oscura.
                   </Card.Text>
                   <Button 
-                    as={Link} 
+                    as={Link as any} // <--- CAMBIO AQUÍ
                     to="/servicios" 
                     variant="outline-light" 
                     className="mt-auto"
@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
                     Exclusividad y estilo único antes de que desaparezcan.
                   </Card.Text>
                   <Button 
-                    as={Link} 
+                    as={Link as any} // <--- CAMBIO AQUÍ
                     to="/servicios" 
                     variant="outline-light" 
                     className="mt-auto"
