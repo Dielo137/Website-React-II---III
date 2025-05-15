@@ -1,58 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import FormProfe from './components/FormProfe';
-import ListProfe from './components/ListProfe';
-import './App.css';
-import Item from './interfaces/Item';
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-  const [items, setItems] = useState<Item[]>([]);
-  const [itemToEdit, setItemToEdit] = useState<Item | null>(null);
 
-  useEffect(() => {
-    const data = localStorage.getItem('items');
-    if (data) {
-      try {
-        const storedItems: Item[] = JSON.parse(data);
-        setItems(storedItems);
-      } catch (error) {
-        console.error('Error parsing items from localStorage:', error);
-        setItems([]);
-      }
-    } else {
-      setItems([]);
-    }
-  }, []);
-  
+import HomePage from './pages/HomePage';
+import AcercaPage from './pages/AcercaPage';
+import ServiciosPage from './pages/ServiciosPage';
+import ContactoPage from './pages/ContactoPage'; // Esta usará el ContactForm.tsx
+import GestionItemsPage from './pages/GestionItemsPage'; // La página CRUD que creaste
 
-  useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items));
-  }, [items]);
 
-  const addOrUpdateItem = (value :string) => {
-    if (itemToEdit) {
-      setItems(items.map(item => item.id === itemToEdit.id ? { ...item, value } :
-        item));
-      setItemToEdit(null);
-    } else {
-      setItems([...items, { id: Date.now(), value }]);
-      setItemToEdit(null);
-    }
-  };
-
-  const deleteItem = (id: number) => {
-    setItems(items.filter(item => item.id !== id));
-  };
-
-  const editItem = (item: Item) => {
-    setItemToEdit(item);
-  };
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>CRUD con LocalStorage</h1>
-      <FormProfe addOrUpdateItem={addOrUpdateItem} itemToEdit={itemToEdit} />
-      <ListProfe items={items} deleteItem={deleteItem} editItem={editItem} />
-    </div>
+    <Router>
+      <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
+        <Container>
+          <Navbar.Brand as={Link} to="/">Mi Proyecto Final</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+              <Nav.Link as={Link} to="/acerca-de">Acerca de</Nav.Link>
+              <Nav.Link as={Link} to="/servicios">Servicios</Nav.Link>
+              <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
+              <Nav.Link as={Link} to="/gestion-items">Gestión Items (CRUD)</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+      <Container className="mt-3">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/acerca-de" element={<AcercaPage />} />
+          <Route path="/servicios" element={<ServiciosPage />} />
+          <Route path="/contacto" element={<ContactoPage />} />
+          <Route path="/gestion-items" element={<GestionItemsPage />} />
+        </Routes>
+      </Container>
+    </Router>
   );
-}
+};
+
 export default App;
