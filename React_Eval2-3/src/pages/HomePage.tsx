@@ -5,10 +5,8 @@ import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   return (
-    <> {/* Fragmento para envolver todo */}
-      {/*  === */}
-      <main> {/*  */}
-        {/* Carousel */}
+    <>
+      <main>
         <Carousel fade className="mb-4">
           <Carousel.Item>
             <img
@@ -36,7 +34,6 @@ const HomePage: React.FC = () => {
           </Carousel.Item>
         </Carousel>
 
-        {/* Sección de Cards */}
         <Container className="mt-4">
           <Row className="mt-4 mb-4">
             {/* Card 1: Nuevas Colecciones */}
@@ -48,16 +45,18 @@ const HomePage: React.FC = () => {
                   alt="Nuevas Colecciones de ropa gótica" 
                   style={{ height: '200px', objectFit: 'contain' }} 
                 />
-                <Card.Body className="d-flex flex-column">
+                {/* Aplicar text-center al Card.Body o a elementos individuales */}
+                <Card.Body className="d-flex flex-column text-center"> {/* <--- TEXTO CENTRADO AQUÍ */}
                   <Card.Title>Nuevas Colecciones</Card.Title>
                   <Card.Text>
                     Descubre lo último que ha llegado a nuestras sombras.
                   </Card.Text>
                   <Button 
-                    as={Link as any} // <--- CAMBIO AQUÍ
+                    as={Link as any} 
                     to="/servicios" 
                     variant="outline-light" 
-                    className="mt-auto"
+                    className="mt-auto" // El botón en sí no se centrará con text-center en el body si usa mt-auto
+                                       // Si quieres centrar el botón también, necesitarías envolverlo o usar clases de margen (ej. mx-auto d-block)
                   >
                     Ver Ahora
                   </Button>
@@ -74,13 +73,13 @@ const HomePage: React.FC = () => {
                   alt="Clásicos Góticos ropa oscura" 
                   style={{ height: '200px', objectFit: 'contain' }} 
                 />
-                <Card.Body className="d-flex flex-column">
+                <Card.Body className="d-flex flex-column text-center"> {/* <--- TEXTO CENTRADO AQUÍ */}
                   <Card.Title>Clásicos Góticos</Card.Title>
                   <Card.Text>
                     Piezas atemporales que definen la esencia oscura.
                   </Card.Text>
                   <Button 
-                    as={Link as any} // <--- CAMBIO AQUÍ
+                    as={Link as any} 
                     to="/servicios" 
                     variant="outline-light" 
                     className="mt-auto"
@@ -100,13 +99,13 @@ const HomePage: React.FC = () => {
                   alt="Ediciones Limitadas de ropa alternativa exclusiva" 
                   style={{ height: '200px', objectFit: 'contain' }} 
                 />
-                <Card.Body className="d-flex flex-column">
+                <Card.Body className="d-flex flex-column text-center"> {/* <--- TEXTO CENTRADO AQUÍ */}
                   <Card.Title>Ediciones Limitadas</Card.Title>
                   <Card.Text>
                     Exclusividad y estilo único antes de que desaparezcan.
                   </Card.Text>
                   <Button 
-                    as={Link as any} // <--- CAMBIO AQUÍ
+                    as={Link as any} 
                     to="/servicios" 
                     variant="outline-light" 
                     className="mt-auto"
@@ -120,20 +119,8 @@ const HomePage: React.FC = () => {
         </Container>
       </main>
 
-      {/* === Footer (anteriormente <footer>) === */}
-      {/* 
-
-      */}
-      <footer className="py-3"> {/* Las clases bg-dark y text-white vendrán de tu styles.css global */}
-        <Container>
-          <Row>
-            <Col md={12} className="text-center">
-              <hr />
-              <p>© 2025 ModaSur. Todos los derechos reservados.</p>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
+      {/* No incluimos el Footer aquí, ya que se maneja globalmente en App.tsx */}
+      {/* Si lo tenías duplicado, esta versión lo omite de HomePage.tsx */}
     </>
   );
 };
