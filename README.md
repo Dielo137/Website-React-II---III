@@ -3,8 +3,8 @@
 
 
 
-##Para probar pagina: 1. Hacer npm install DENTRO de la carpeta React_Eval2-3
-2. Luego, npm run dev
+#Para probar pagina: 1. Hacer npm install DENTRO de la carpeta React_Eval2-3
+#2. Luego, npm run dev
 
 
 
