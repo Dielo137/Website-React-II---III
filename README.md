@@ -29,14 +29,14 @@ El sitio mantendrá sus 4 secciones principales: **Inicio, Sobre Nosotros, Servi
 *   Almacenamiento de los datos del formulario en LocalStorage.
 *   Implementación de todas las secciones usando componentes React funcionales.
 *   Estructura de proyecto organizada (carpetas para componentes, páginas/secciones, interfaces).
-*   (Opcional, si se implementa) Navegación entre páginas utilizando React Router.
+
 
 **Secciones del Sitio:**
 
 *   **Inicio:** Navbar, Carrusel de imágenes/productos destacados, Contenido introductorio, Footer.
 *   **Sobre Nosotros:** Navbar, Información sobre la empresa/marca, Footer.
 *   **Servicios:** Navbar, Presentación de 6 servicios/categorías de productos, Footer.
-*   **Contacto:** Navbar, Formulario de contacto funcional (con validación y guardado en LocalStorage), Mapa (opcional), Footer.
+*   **Contacto:** Navbar, Formulario de contacto funcional (con validación y guardado en LocalStorage), Mapa , Footer.
 
 **Estilo Visual:** Se mantendrá la estética **oscura, post-punk, gótica** del diseño original.
 
