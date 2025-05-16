@@ -3,13 +3,9 @@
 
 
 
-# Para probar pagina: 
-# 1. Hacer npm install DENTRO de la carpeta React_Eval2-3
-# 2. Luego, npm run dev
-.
-.
-.
-.
+## Para probar pagina: 
+## 1. Hacer npm install DENTRO de la carpeta React_Eval2-3
+## 2. Luego, npm run dev
 
 ## Descripción del Proyecto 👗
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![React](https://img.shields.io/badge/React-^18.x-61DAFB.svg?logo=react)](https://reactjs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-^5.x-3178C6.svg?logo=typescript)](https://www.typescriptlang.org/) [![React Bootstrap](https://img.shields.io/badge/React%20Bootstrap-^2.x-7952B3.svg?logo=bootstrap)](https://react-bootstrap.github.io/)
